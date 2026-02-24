@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: iteration-review-game
+    env: node
+    plan: free
+    rootDir: web
+    buildCommand: npm install && npm run build
+    startCommand: node server/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
