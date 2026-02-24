@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import reportlab; print\\(reportlab.Version\\)\" 2>&1222)",
+      "Bash(pip install reportlab -q 2>&1 | tail -3)",
+      "Bash(pip3 install reportlab -q 2>&1 | tail -3)",
+      "Bash(pip3 install reportlab -q --break-system-packages 2>&1 | tail -3)"
+    ]
+  }
+}
