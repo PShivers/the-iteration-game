@@ -5,7 +5,11 @@
       "Bash(pip install reportlab -q 2>&1 | tail -3)",
       "Bash(pip3 install reportlab -q 2>&1 | tail -3)",
       "Bash(pip3 install reportlab -q --break-system-packages 2>&1 | tail -3)",
-      "Bash(python3 generate_cards.py)"
+      "Bash(python3 generate_cards.py)",
+      "Bash(cd /home/pshivers/code/the-iteration-game/web && npm install 2>&1 | tail -5)",
+      "Bash(npm install --prefix client 2>&1 | tail -5)",
+      "Bash(npm run build 2>&1)",
+      "Bash(pkill -f \"node server/index.js\" 2>/dev/null; sleep 1; echo \"killed\")"
     ]
   }
 }
