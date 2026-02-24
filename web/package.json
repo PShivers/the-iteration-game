@@ -1,0 +1,18 @@
+{
+  "name": "iteration-review-game",
+  "version": "1.0.0",
+  "description": "Real-time multiplayer card game for agile teams",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "concurrently \"NODE_ENV=development node server/index.js\" \"npm run dev --prefix client\"",
+    "build": "npm install --prefix client && npm run build --prefix client"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
