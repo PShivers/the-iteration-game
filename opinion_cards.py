@@ -1,0 +1,15 @@
+# 80% on-topic iteration review, 20% fun
+opinion_cards = [
+    # --- on topic ---
+    "WHICH DELIVERED\nTHE MOST VALUE?",
+    "WHICH WOULD YOU\nDEMO TO THE CEO?",
+    "WHICH WOULD YOU\nCUT FIRST?",
+    "WHICH SHOULD HAVE\nBEEN AN EMAIL?",
+    "WHICH ESTIMATE\nWAS MOST WRONG?",
+    "WHICH TOOK THE MOST\nMEETINGS TO SHIP?",
+    "WHICH IS MOST LIKELY\nTO PAGE YOU AT 2AM?",
+    "WHICH WOULD YOU\nDO AGAIN\nNEXT SPRINT?",
+    # --- fun ---
+    "WHICH WOULD YOU\nHAND OFF TO\n___________?",
+    "WHICH WOULD YOU\nNAME YOUR BAND\nAFTER?",
+]

@@ -6,6 +6,9 @@ from reportlab.lib import colors
 from reportlab.lib.units import inch
 from reportlab.pdfgen import canvas
 
+from opinion_cards import opinion_cards
+from culture_cards import culture_cards
+
 PAGE_W, PAGE_H = LETTER
 MARGIN = 0.5 * inch
 COLS, ROWS = 3, 3
@@ -19,57 +22,6 @@ DARK_RED    = colors.HexColor('#8B1A2E')
 NEAR_BLACK  = colors.HexColor('#1A1A1A')
 MID_GRAY    = colors.HexColor('#555555')
 LIGHT_GRAY  = colors.HexColor('#CCCCCC')
-
-opinion_cards = [
-    "WHICH DELIVERED\nTHE MOST VALUE?",
-    "WHICH WOULD YOU\nDEMO TO THE CEO?",
-    "WHICH WOULD YOU\nCUT FIRST?",
-    "WHICH SHOULD HAVE\nBEEN AN EMAIL?",
-    "WHICH ESTIMATE\nWAS MOST WRONG?",
-    "WHICH TOOK THE MOST\nMEETINGS TO SHIP?",
-    "WHICH IS MOST LIKELY\nTO PAGE YOU AT 2AM?",
-    "WHICH WOULD YOU\nHAND OFF TO\n___________?",
-    "WHICH WOULD YOU\nDO AGAIN\nNEXT SPRINT?",
-]
-
-culture_cards = [
-    (
-        "TECHNICAL DEBT",
-        "The mortgage on your\ncodebase. You know you\nshould pay it down. You won't.",
-    ),
-    (
-        "DAILY STANDUP",
-        "Fifteen minutes of everyone\nsaying they're not blocked\nwhile being very blocked.",
-    ),
-    (
-        "VELOCITY",
-        "A number that goes up\nwhen things go well and gets\nblamed when they don't.",
-    ),
-    (
-        "DEFINITION OF DONE",
-        "The checklist you agreed on\nin planning and quietly\nignore by Thursday.",
-    ),
-    (
-        "STORY POINTS",
-        "A unit of effort that means\nnothing and everything\nat the same time.",
-    ),
-    (
-        "RETROSPECTIVE",
-        "Where the team agrees to fix\nthe same three problems\nit agreed to fix last sprint.",
-    ),
-    (
-        "PRODUCT BACKLOG",
-        "A graveyard of good ideas,\northogonal priorities,\nand stakeholder whims. RIP.",
-    ),
-    (
-        "SPRINT GOAL",
-        "Written optimistically\non Monday.\nAbandoned by Wednesday.",
-    ),
-    (
-        "PI PLANNING",
-        "Two days of sticky notes,\nsnacks, and collective\ndelusion at scale.",
-    ),
-]
 
 
 def _centered_text_y(card_bottom, card_height, n_lines, line_h, font_size):
@@ -146,9 +98,6 @@ def card_xy(index_on_page):
 
 
 def generate_pdf(output='iteration_review_cards.pdf'):
-    assert len(opinion_cards) == len(culture_cards), \
-        f"Card counts must match: {len(opinion_cards)} opinion vs {len(culture_cards)} culture"
-
     c = canvas.Canvas(output, pagesize=LETTER)
 
     # Page(s): opinion cards
